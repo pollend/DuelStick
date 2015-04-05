@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace DualStick
+namespace Shooter.Layers
 {
     public class LayerManager
     {

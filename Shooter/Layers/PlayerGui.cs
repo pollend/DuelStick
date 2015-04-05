@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DualStick.Layers
+namespace Shooter.Layers
 {
     public class PlayerGui : ILayer
     {

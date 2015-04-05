@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 #endregion
 
-namespace DualStick
+namespace Shooter
 {
 #if WINDOWS || LINUX
     /// <summary>

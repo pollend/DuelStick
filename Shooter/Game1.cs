@@ -6,24 +6,26 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.GamerServices;
+using Shooter.Node;
+using Shooter.Layers;
 #endregion
 
-namespace DualStick
+namespace Shooter
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private LayerManager _layerManager;
 
         public Game1()
             : base()
         {
-            graphics = new GraphicsDeviceManager(this);
+            Engine.instance.GraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            Engine.instance.GraphicsDevice = GraphicsDevice;
         }
 
         /// <summary>
@@ -34,30 +36,18 @@ namespace DualStick
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             base.Initialize();
-            Engine.instance.Graphics = graphics;
+          
         }
-
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-          
-            // TODO: use this.Content to load your game content here
-        }
-
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
+            Engine.instance.SpriteBatch = new SpriteBatch(GraphicsDevice);
+            _layerManager = new LayerManager(Content);
+            _layerManager.addLayer(new PlayField());
         }
 
         /// <summary>
@@ -70,8 +60,7 @@ namespace DualStick
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
+            _layerManager.update();
             base.Update(gameTime);
         }
 
@@ -81,10 +70,8 @@ namespace DualStick
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            // TODO: Add your drawing code here
-
+            _layerManager.draw();
             base.Draw(gameTime);
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DualStick.Entity
+namespace Shooter.Entity
 {
     public class Entity
     {
