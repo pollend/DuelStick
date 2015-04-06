@@ -25,7 +25,7 @@ namespace Shooter
             Engine.instance.GraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            Engine.instance.GraphicsDevice = GraphicsDevice;
+            
         }
 
         /// <summary>
@@ -45,6 +45,7 @@ namespace Shooter
         /// </summary>
         protected override void LoadContent()
         {
+            Engine.instance.GraphicsDevice = GraphicsDevice;
             Engine.instance.SpriteBatch = new SpriteBatch(GraphicsDevice);
             _layerManager = new LayerManager(Content);
             _layerManager.addLayer(new PlayField());
@@ -71,7 +72,10 @@ namespace Shooter
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
             _layerManager.draw();
+    
+            
             base.Draw(gameTime);
         }
     }

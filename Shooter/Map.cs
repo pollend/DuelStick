@@ -16,7 +16,7 @@ namespace Shooter
     {
         private ModelNode _modelNode;
         private Space _space;
-
+        float x = 0;
         private Camera _camera = new Camera(45);
 
         public Map(string node,NodeManager nodeManager,Space space,ContentManager content)
@@ -27,11 +27,23 @@ namespace Shooter
             nodeManager.ActiveCamera = _camera;
 
             Matrix lout = new Matrix();
-            Matrix.CreateTranslation(0, 0, -5, out  lout);
+            Matrix.CreateTranslation(0, 0, -10, out  lout);
             _camera.transform = lout;
+
+
+            lout = new Matrix();
+            Matrix.CreateTranslation(1, 0, 0, out  lout);
+            _modelNode.transform = lout;
+
+
             _space = space;
         }
 
+        public void update()
+        {
+            //x+= 0.1f;
+           //_modelNode.transform =  Matrix.CreateRotationX(x);
+        }
 
 
     }

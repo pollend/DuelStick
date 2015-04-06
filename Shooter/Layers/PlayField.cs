@@ -32,7 +32,8 @@ namespace Shooter.Layers
 
         public void update(LayerManager layerManager)
         {
-            _nodeManager.update(); 
+            _nodeManager.update();
+            _map.update();
         }
 
         public void draw()

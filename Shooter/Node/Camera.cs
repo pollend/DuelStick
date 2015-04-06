@@ -29,7 +29,7 @@ namespace Shooter.Node
         public Camera(float angle)
             : base(true)
         {
-            _projection = Matrix.CreatePerspectiveFieldOfView(Engine.instance.GraphicsDeviceManager.PreferredBackBufferWidth / Engine.instance.GraphicsDeviceManager.PreferredBackBufferHeight, MathHelper.ToRadians(angle), 0.01f, 100f);
+            _projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(angle), Engine.instance.GraphicsDevice.Viewport.AspectRatio, 0.1f, 100f);
         }
 
         //update the transform view matrix every loop
