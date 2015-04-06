@@ -15,8 +15,11 @@ namespace Shooter.Node
         protected bool _nodeAlive = true;
         protected bool _singleParent = false;
 
+
         public bool nodeAlive { get { return _nodeAlive; } set { _nodeAlive = value; } }
         public Matrix transform { get { return _transform; } set { _transform = value; } }
+
+        public HashSet<Node> getChildren { get { return _children; } }
 
         private List<Node> _parents = new List<Node>();
 
@@ -38,17 +41,10 @@ namespace Shooter.Node
             _parents.Add(parent);
         }
 
-        public virtual void load(ContentManager content)
-        {
-
-        }
-
         public void addChild(Node node,ContentManager content)
         {
-           
-
             node._nodeManager = _nodeManager;
-            node.load(content);
+
 
             //adds this node as a parent
             node.addParent(this);

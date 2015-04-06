@@ -47,13 +47,14 @@
     <Compile Include="Layers\MainMenu.cs" />
     <Compile Include="Layers\PlayerGui.cs" />
     <Compile Include="Layers\PlayField.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="PlayField\Map.cs" />
     <Compile Include="Node\Camera.cs" />
-    <Compile Include="Node\ModelNode.cs" />
+    <Compile Include="Node\ModelNodes\ModelNode.cs" />
     <Compile Include="Node\Node.cs" />
     <Compile Include="Node\NodeManager.cs" />
     <Compile Include="Node\ParentNode.cs" />
     <Compile Include="Node\RootNode.cs" />
+    <Compile Include="PlayField\MapStickNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,6 +78,7 @@
     <Content Include="Content\EGYPT-C-PATTERN.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\shader.fx" />
     <Content Include="Content\ShipTexture.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
