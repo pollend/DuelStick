@@ -11,7 +11,6 @@ namespace Shooter.Node
         public RootNode parent;
         private Stack<Matrix> _matricies = new Stack<Matrix>();
         private Camera _activeCamera = new Camera();
-
         public Camera ActiveCamera { get { return _activeCamera; } set { _activeCamera = value; } }
 
         public NodeManager()
@@ -60,7 +59,6 @@ namespace Shooter.Node
                 
                 if (_matricies.Count > 0)
                     _matricies.Pop();
-
 
             }
         }
