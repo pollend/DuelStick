@@ -31,7 +31,7 @@ namespace Shooter.Node
 
         private void nodeUpdateWalk(Node n)
         {
-            foreach (Node node in n.getChildren())
+            foreach (Node node in n.children)
             {
                 if (node.nodeAlive)
                 {
@@ -48,7 +48,7 @@ namespace Shooter.Node
 
         private void nodeDrawWalk(Node n)
         {
-            foreach (Node node in n.getChildren())
+            foreach (Node node in n.children)
             {
                 if (_matricies.Count == 0)
                     _matricies.Push(node.transform);

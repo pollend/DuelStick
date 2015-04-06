@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Shooter.PlayField;
+using Shooter.MapArea;
 
 namespace Shooter.Layers
 {
@@ -28,7 +28,7 @@ namespace Shooter.Layers
         public void load(ContentManager content)
         {
             _space = new Space();
-            _map = new Map("sphere", _nodeManager, _space,content);
+            _map = new Map("sphere", _nodeManager, content);
         }
 
         public void update(LayerManager layerManager)

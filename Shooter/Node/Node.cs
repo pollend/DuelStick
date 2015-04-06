@@ -19,7 +19,7 @@ namespace Shooter.Node
         public bool nodeAlive { get { return _nodeAlive; } set { _nodeAlive = value; } }
         public Matrix transform { get { return _transform; } set { _transform = value; } }
 
-        public HashSet<Node> getChildren { get { return _children; } }
+        public HashSet<Node> children { get { return _children; } }
 
         private List<Node> _parents = new List<Node>();
 
@@ -57,11 +57,7 @@ namespace Shooter.Node
             return _children.Remove(node);
         }
 
-        public HashSet<Node> getChildren()
-        {
-            return _children;
-        }
-
+    
         public virtual void draw(Matrix transform)
         {
 
